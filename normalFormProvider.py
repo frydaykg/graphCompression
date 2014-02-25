@@ -15,10 +15,9 @@ def getSingleVertics(a, n):
 	vertics = []
 	for i in range(n):
 		for j in range(n):
-			if a[i][j] == 1 or a[j][i] == 1: 
+			if a[i][j] == 0 and a[j][i] == 0: 
 				break
 		else:
-			continue
-		vertics.append(i)
+			vertics.append(i)
 	return vertics
 

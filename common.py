@@ -99,11 +99,14 @@ def countEdges(a,n):
 				k += 1
 	return k
 
-def getRandomGraph(n):
+def getRandomGraph(n, edg = None):
 	a=[]
 	for i in range(n):
 		a.append([0] * n)
-	edg = sysrandom.randint(0, n*n - n)
+	
+	if not edg:
+		edg = sysrandom.randint(0, n*n - n)
+		
 	k = 0
 	while k != edg:
 		i = sysrandom.randint(0, n-1)
@@ -129,19 +132,6 @@ def getTournirGraph(n):
 	for i in range(n - 1):
 		for j in range(i + 1, n):
 			a[i][j] = 1
-	return a
-
-def getRandomGraph(n,v):
-	a = []
-	for i in range(n):
-		a.append([0] * n)
-	k = 0
-	while k != v:
-		i = sysrandom.randint(0, n-1)
-		j = sysrandom.randint(0, n-1)
-		if a[i][j] != 1 and i != j:
-			a[i][j] = 1
-			k += 1
 	return a
 
 def getCellGraph(n):
